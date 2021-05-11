@@ -8,7 +8,18 @@ def factorial(num):
         for i in range(1,num+1):
             fact*=i
         print(fact)
+
+
+def fact_trailing_zero(num):
+    count=0
+    i=5
+    if(number//i!=0):
+        count+=int(number/i)
+        i=i*5
+    print(count)
+    
+    
             
 number=int(input("enter the number:\n"))
 factorial(number)
-
+fact_trailing_zero(number)
