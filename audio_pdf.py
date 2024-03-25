@@ -1,9 +1,18 @@
 import pyttsx3,PyPDF2
 
 #insert name of your pdf 
-pdfreader = PyPDF2.PdfReader(open('<file_path>', 'rb'))
+file = '<file_path>'
+
+if file.endswith(".pdf"):
+    pdfreader = PyPDF2.PdfReader(open(file, 'rb'))
+else:
+    print("Please enter a valid file that is a pdf")
+    exit()
+
 speaker = pyttsx3.init()
 story_list = []
+
+
 
 for page_num in range(len(pdfreader.pages)):
     text = pdfreader.pages[page_num].extract_text()
